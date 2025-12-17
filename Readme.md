@@ -57,6 +57,3 @@ This is a complete, demonstrable project. Present it as a unified system that sh
 - `rules.py` — rule definitions and evaluator used in the demo.
 - `llm_gemini.py` — the conversational/explanation wrapper used to generate human-readable responses.
 
----
-
-If you want, I can now: (A) refine this presentation into a 3–5 minute demo script with speaker notes, (B) add a short README badge and one-page slide export, or (C) expand the Windows installation with troubleshooting tips. Which would you like next?

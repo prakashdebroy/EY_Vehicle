@@ -23,7 +23,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-The web dashboard is available at http://localhost:5000 (default). Use the UI and voice control to interact with the system during the demo.
+The web dashboard is available at http://localhost:5001 (default). Use the UI and voice control to interact with the system during the demo.
 
 ## Project Presentation (for Judges)
 

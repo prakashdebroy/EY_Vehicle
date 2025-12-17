@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Car Dashboard - EY</title>
+    <link rel="stylesheet" href="/static/app.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">🚗 Motiv.</div>
+      <ul class="nav">
+        <li class="nav-item"><span class="icon">📊</span> Dashboard</li>
+        <li class="nav-item active"><span class="icon">🏎️</span> Assets</li>
+        <li class="nav-item"><span class="icon">📅</span> Booking</li>
+        <li class="nav-item"><span class="icon">🔧</span> Services</li>
+        <li class="nav-item"><span class="icon">📆</span> Calendar</li>
+        <li class="nav-item"><span class="icon">💬</span> Messages</li>
+      </ul>
+      <div class="nav-bottom">
+        <li class="nav-item"><span class="icon">⚙️</span> Settings</li>
+        <li class="nav-item"><span class="icon">🚪</span> Log out</li>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <header class="top-header">
+        <h1>Assets</h1>
+      </header>
+
+      <section class="top-section">
+        <div class="card fuel-card">
+          <div class="fuel-info">
+            <div class="metric">
+              <div class="label">Fuel Usage</div>
+              <div class="value" id="fuel">-- Ltr</div>
+            </div>
+            <div class="metric">
+              <div class="label">KM Driven</div>
+              <div class="value" id="odo_km">-- Ltr</div>
+            </div>
+            <div class="metric">
+              <div class="label">Total Cost</div>
+              <div class="value" id="cost">₹--</div>
+            </div>
+            <div class="metric">
+              <div class="label">Top Speed</div>
+              <div class="value" id="max_speed">-- kph</div>
+            </div>
+          </div>
+          <div class="car-image">🚗</div>
+        </div>
+
+        <div class="card activity-card">
+          <h3>Activity</h3>
+          <div class="activity-stat"><strong>Traveled last month</strong><br><div id="traveled">-- Km</div></div>
+          <canvas id="activityChart" height="100"></canvas>
+        </div>
+      </section>
+
+      <section class="alerts-section">
+        <h3>Real-time Alerts</h3>
+        <ul id="alerts" class="alerts-list"></ul>
+      </section>
+
+      <section class="middle-section">
+        <div class="card notes-card">
+          <h3>Notes</h3>
+          <div id="notes">
+            <div class="note-item">✓ Monday, 3th Nov 2025 - Book for General Service - COMPLETED</div>
+            <div class="note-item">⚠ Thursday, 23th October 2025 - AI Says vehicle need Brake Maintenance</div>
+            <div class="note-item">✓ Monday, 11th August 2025 - Maintenance Completed Collect</div>
+          </div>
+        </div>
+
+        <div class="card sensors-card">
+          <h3>Active Sensors</h3>
+          <div id="sensorsList" class="sensors-list">
+            <div class="sensor-status">Loading...</div>
+          </div>
+        </div>
+      </section>
+
+      
+
+      <section class="service-grid">
+        <h3>Service Status</h3>
+        <div class="status-items">
+          <div class="status-item oil-level">
+            <div class="icon">🛢️</div>
+            <div class="name">Oil Level</div>
+            <div class="values">
+              <span class="status good">Engine</span>
+              <span class="status ok">Don't Replace</span>
+            </div>
+            <div class="status-bar"><div class="fill" style="width: 75%"></div></div>
+          </div>
+          <div class="status-item brake-pads">
+            <div class="icon">🛑</div>
+            <div class="name">Brake Pads</div>
+            <div class="values">
+              <span class="status warn">Wheels</span>
+              <span class="status alert">Need Change</span>
+            </div>
+            <div class="status-bar"><div class="fill critical" style="width: 40%"></div></div>
+          </div>
+          <div class="status-item steering">
+            <div class="icon">🔧</div>
+            <div class="name">Steering</div>
+            <div class="values">
+              <span class="status good">Drivetrain</span>
+              <span class="status ok">Need Change</span>
+            </div>
+            <div class="status-bar"><div class="fill warning" style="width: 60%"></div></div>
+          </div>
+          <div class="status-item oil-level-2">
+            <div class="icon">🛢️</div>
+            <div class="name">Oil Level</div>
+            <div class="values">
+              <span class="status good">Engine</span>
+              <span class="status ok">Don't Replace</span>
+            </div>
+            <div class="status-bar"><div class="fill" style="width: 85%"></div></div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
